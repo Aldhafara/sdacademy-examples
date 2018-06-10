@@ -1,0 +1,20 @@
+13 maj 2018 13:53:04,266 :: [main] INFO  pl.sdacademy.logger.LoggerTest - This is info log
+13 maj 2018 13:53:04,266 :: [main] DEBUG pl.sdacademy.logger.LoggerTest - This is debug message
+13 maj 2018 14:18:45,082 :: [main] ERROR Main - Wyjątek! Wiadomość: 
+pl.sdacademy.exception.BadEmailException: Adres email jest niepoprawny!
+	at pl.sdacademy.users.User.setEmail(User.java:38)
+	at pl.sdacademy.dzielenie.Main.main(Main.java:16)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at com.intellij.rt.execution.application.AppMainV2.main(AppMainV2.java:131)
+13 maj 2018 14:18:45,113 :: [main] ERROR Main - To już drugi wyjątek! Wiadomość: 
+pl.sdacademy.exception.BadEmailException: Adres email jest niepoprawny!
+	at pl.sdacademy.users.User.<init>(User.java:22)
+	at pl.sdacademy.dzielenie.Main.main(Main.java:28)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at com.intellij.rt.execution.application.AppMainV2.main(AppMainV2.java:131)
