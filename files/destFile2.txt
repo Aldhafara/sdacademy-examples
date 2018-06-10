@@ -1,0 +1,3 @@
+pierwsza lenght: 8
+druga lenght: 5
+całkiem dluga liniala la la la la lenght: 33

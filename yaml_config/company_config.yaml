@@ -1,0 +1,13 @@
+version: 1.0
+released: 2018-05-26
+author: Marek Nawrocki
+
+# Protocols
+tradeList:
+   - drukowanie
+   - sprzedaż
+
+# Users
+users:
+    adrian: admin
+    bogdan: normal
