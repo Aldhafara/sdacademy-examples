@@ -1,5 +1,8 @@
 package pl.sdacademy.swing.homework;
 
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.nio.file.Path;
 import java.util.stream.Stream;
 
@@ -14,7 +17,13 @@ class ClasspathResourceReader {
 	 * @return the stream containing ordered lines of the text file
 	 */
 	Stream<String> readAllLines(Path filePath) {
+
 		// TODO: implement according to the test specification and javadoc
-		throw new UnsupportedOperationException("implement according to the test specifcation and javadoc");
+		BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream
+			("/" + filePath.toString())));
+
+		return br.lines();
+
+
 	}
 }
