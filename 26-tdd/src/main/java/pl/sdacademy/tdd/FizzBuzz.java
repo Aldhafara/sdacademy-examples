@@ -10,7 +10,6 @@ public class FizzBuzz {
 		 * @return the string according to the specification
 		 */
 		public static String msg(int number) {
-			// TODO: implement according to javadoc specification following TDD principles  hgjgjhg
 			if (isPrime(number)==true){
 				if (number == 3)
 					return "FizzWhiz";

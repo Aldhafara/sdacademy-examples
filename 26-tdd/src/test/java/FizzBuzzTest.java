@@ -7,7 +7,6 @@ import pl.sdacademy.tdd.FizzBuzz;
 import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.Fail.fail;
 
-// TODO: write your tests inside this class
 class FizzBuzzTest {
 
 	@DisplayName("should return any non-empty string when number is 0")
