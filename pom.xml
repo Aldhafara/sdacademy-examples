@@ -31,11 +31,11 @@
 		<module>23_pliki_konfiguracyjne</module>
 		<module>24_programowanie_funkcyjne</module>
 		<module>25-swing</module>
-<<<<<<< HEAD
+		<!-- <<<<<<< HEAD -->
 		<module>pracaDomowa</module>
-=======
+		<!-- ======= -->
 		<module>26-tdd</module>
->>>>>>> mikewojtyna/master
+		<!-- >>>>>>> mikewojtyna/master -->
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
