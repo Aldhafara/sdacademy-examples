@@ -9,24 +9,31 @@ public class FizzBuzz {
 		 * @param number a number
 		 * @return the string according to the specification
 		 */
-		public static String msg(int number) {
-			if (isPrime(number)==true){
-				if (number == 3)
+		public static String msg(int number)
+		{
+			int number1 = 3;
+			int number2 = 5;
+
+
+			if (isPrime(number)==true)
+			{
+				if (number == number1)
 					return "FizzWhiz";
-				if (number == 5)
+				if (number == number2)
 					return "BuzzWhiz";
 				else
 					return "Whiz";
 			}
-			if (number % 15==0)
+			if (number % (number1*number2) == 0)
 				return "FizzBuzz";
-			if (number % 3 == 0)
+			if (number % number1 == 0)
 				return "Fizz";
-			if (number % 5==0)
+			if (number % number2 == 0)
 				return "Buzz";
 			return String.valueOf(number);
 		}
-		private static boolean isPrime(int number){
+		private static boolean isPrime(int number)
+		{
 			if ((number>0) && (number % 1 == 0) && (number % number == 0)){
 				for (int i = 2; i <number ; i++)
 				{
@@ -34,7 +41,7 @@ public class FizzBuzz {
 						return false;
 				}
 			}
-			if (number != 1)
+			if (number != 1 && number != 0)
 				return true;
 			else
 				return false;

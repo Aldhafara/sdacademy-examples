@@ -35,6 +35,7 @@
 		<module>pracaDomowa</module>
 		<!-- ======= -->
 		<module>26-tdd</module>
+		<module>hr-module</module>
 		<!-- >>>>>>> mikewojtyna/master -->
 	</modules>
 	<packaging>pom</packaging>

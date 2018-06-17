@@ -2,21 +2,21 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import pl.sdacademy.tdd.FizzBuzz;
+import pl.sdacademy.tdd.Fibonacci;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.assertj.core.api.Fail.fail;
 
-class FizzBuzzTest {
-
+class FibonacciTest {
+/*
 	@DisplayName("should return any non-empty string when number is 0")
 	@Test
 	void anyString() throws Exception{
 		//when
-		String result = FizzBuzz.msg(0);
+		String result = Fibonacci.Fibonacci(0);
 		//then
 		assertThat(result).isNotEmpty();
 	}
+	*/
 
 	/*@DisplayName("should return \"1\" when number is 1")
 	@Test
@@ -28,12 +28,9 @@ class FizzBuzzTest {
 	}*/
 
 	@DisplayName("should return string according FizzBuzz specyfication")
-	@ParameterizedTest(name = "given = {0}, expected = \"{1}\"")
-	@CsvSource({"0, FizzBuzz","1, 1","2, Whiz","3, FizzWhiz","4, 4","5, BuzzWhiz","6, Fizz","7, Whiz","10, Buzz",
-		"11, " +
-		"Whiz",
-		"13, Whiz","17, Whiz","19, Whiz","15, FizzBuzz","30, FizzBuzz","97, Whiz"})
-	void testFizzBuzz(int number, String expectedMsg) throws Exception{
-		assertThat(FizzBuzz.msg(number)).isEqualTo(expectedMsg);
+	@ParameterizedTest(name = "given = {0}, expected = {1}")
+	@CsvSource({"0, 0","1, 1","2, 1","3, 2","4, 3","5, 5","6, 8","7, 13","8, 21"})
+	void testFizzBuzz(int number, int expectedInt) throws Exception{
+		assertThat(Fibonacci.Fibonacci(number)).isEqualTo(expectedInt);
 	}
 }
