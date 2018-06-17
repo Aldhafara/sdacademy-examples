@@ -1,5 +1,9 @@
 package pl.sdacademy.hr;
 
+import java.sql.Array;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CommentLineRunner {
@@ -25,5 +29,9 @@ public class CommentLineRunner {
 
 	private static String extractorArgument (String argument, String argumentKey){
 		return argument.split(argumentKey + "=")[1];
+	}
+
+	public static List<String> list(HrManager hrManager) {
+		return hrManager.findAll().stream().map(Employee::toString).collect(Collectors.toList());
 	}
 }
