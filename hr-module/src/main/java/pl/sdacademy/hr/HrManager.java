@@ -18,4 +18,25 @@ class HrManager {
 	public List<Employee> findAll() {
 		return employeeList;
 	}
+
+	public List<Employee> searchByLastName(String lastName) {
+		List<Employee> foundEmployeesList = new ArrayList<>();
+		for (Employee employee:employeeList){
+			if (employee.getLastName().equals(lastName))
+		     	   foundEmployeesList.add(employee);
+		}
+
+		return foundEmployeesList;
+	}
+
+	public List<Employee> searchByAnyString(String searchString) {
+		List<Employee> foundEmployeesList = new ArrayList<>();
+		for (Employee employee:employeeList){
+			if (employee.getLastName().equals(searchString) || employee.getFirstName().equals
+				(searchString) || employee.getDateOfBirth().equals(searchString))
+				foundEmployeesList.add(employee);
+		}
+
+		return foundEmployeesList;
+	}
 }

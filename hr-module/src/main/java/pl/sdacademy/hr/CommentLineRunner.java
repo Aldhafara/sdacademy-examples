@@ -22,9 +22,11 @@ public class CommentLineRunner {
 	}
 
 	private static boolean containsAllArguments(String[] args) {
-		return Stream.of(args).allMatch(arg ->
-			arg.contains("firstName=") || arg.contains("lastName=") || arg.contains("dateOfBirth=")) &&
-			(args.length >= 3);
+		return Stream.of(args).allMatch(
+			arg -> arg.contains("firstName=") ||
+				arg.contains("lastName=") ||
+				arg.contains("dateOfBirth=")) &&
+				(args.length >= 3);
 	}
 
 	private static String extractorArgument (String argument, String argumentKey){

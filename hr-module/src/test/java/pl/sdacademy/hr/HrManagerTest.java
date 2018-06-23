@@ -76,4 +76,68 @@ class HrManagerTest {
 		assertThat(existingEmployees).containsOnly(adam,jan);
 	}
 
+	@DisplayName("Should find one employee with given last name")
+	@Test
+	void userTest4(){
+		//given
+		Employee adam = hrManager.create("Adam","Nowak","01-01-1960");
+		Employee jan = hrManager.create("Jan","Kowalski","13-04-1988");
+		Employee piotr = hrManager.create("Piotr","Kowalski","13-04-1988");
+		Employee steffen = hrManager.create("Steffen","Möller","22-01-1969");
+
+		//when
+		List<Employee> foundEmployees = hrManager.searchByLastName("Nowak");
+
+		//then
+		assertThat(foundEmployees).containsOnly(adam);
+	}
+
+	@DisplayName("Should find every employee with given last name")
+	@Test
+	void userTest5(){
+		//given
+		Employee adam = hrManager.create("Adam","Nowak","01-01-1960");
+		Employee jan = hrManager.create("Jan","Kowalski","13-04-1988");
+		Employee piotr = hrManager.create("Piotr","Kowalski","13-04-1988");
+		Employee steffen = hrManager.create("Steffen","Möller","22-01-1969");
+
+		//when
+		List<Employee> foundEmployees = hrManager.searchByLastName("Kowalski");
+
+		//then
+		assertThat(foundEmployees).containsOnly(jan,piotr);
+	}
+
+	@DisplayName("Should return empty list when list do not contains search last name")
+	@Test
+	void userTest6(){
+		//given
+		Employee adam = hrManager.create("Adam","Nowak","01-01-1960");
+		Employee jan = hrManager.create("Jan","Kowalski","13-04-1988");
+		Employee piotr = hrManager.create("Piotr","Kowalski","13-04-1988");
+		Employee steffen = hrManager.create("Steffen","Möller","22-01-1969");
+
+		//when
+		List<Employee> foundEmployees = hrManager.searchByLastName("wiśniewski");
+
+		//then
+		assertThat(foundEmployees).isEmpty();
+	}
+
+	@DisplayName("Should return employee list with given any string")
+	@Test
+	void userTest7(){
+		//given
+		Employee adam = hrManager.create("Adam","Nowak","01-01-1960");
+		Employee jan = hrManager.create("Jan","Kowalski","13-04-1988");
+		Employee piotr = hrManager.create("Piotr","Kowalski","13-04-1988");
+		Employee steffen = hrManager.create("Steffen","Möller","22-01-1969");
+
+		//when
+		List<Employee> foundEmployees = hrManager.searchByAnyString("Piotr");
+
+		//then
+		assertThat(foundEmployees).containsOnly(piotr);
+	}
+
 }
