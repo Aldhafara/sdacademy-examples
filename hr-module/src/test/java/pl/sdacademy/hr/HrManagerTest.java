@@ -124,7 +124,8 @@ class HrManagerTest {
 		assertThat(foundEmployees).isEmpty();
 	}
 
-	@DisplayName("Should return employee list with given any string")
+	@DisplayName("Should find every employee with any firstName, lastName or dateOfBirth matching given search " +
+		"phrase")
 	@Test
 	void userTest7(){
 		//given
@@ -138,6 +139,37 @@ class HrManagerTest {
 
 		//then
 		assertThat(foundEmployees).containsOnly(piotr);
+	}
+
+	@DisplayName("Should sort by first name ascending")
+	@Test
+	void userTest8(){
+		//given
+		Employee adam = hrManager.create("Adam","Nowak","01-01-1960");
+		Employee zenon = hrManager.create("Zenon","Kowalski","13-04-1988");
+		Employee jan = hrManager.create("Jan","Kowalski","13-04-1988");
+
+		//when
+		List<Employee> sortEmployees = hrManager.sortByFirstName();
+
+		//then
+		assertThat(sortEmployees).containsExactly(adam,jan,zenon);
+	}
+
+	@DisplayName("Should sort by first name ascending with boublesort")
+	@Test
+	void userTest9(){
+		//given
+		Employee adam = hrManager.create("Adam","Nowak","01-01-1960");
+		Employee zenon = hrManager.create("Zenon","Kowalski","13-04-1988");
+		Employee aaron = hrManager.create("Aaron","Michnik","10-06-1978");
+		Employee jan = hrManager.create("Jan","Kowalski","13-04-1988");
+
+		//when
+		List<Employee> sortEmployees = hrManager.sortByBouble(hrManager.findAll());
+
+		//then
+		assertThat(sortEmployees).containsExactly(aaron,adam,jan,zenon);
 	}
 
 }
