@@ -1,5 +1,9 @@
 package pl.sdacademy.hr;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -10,14 +14,31 @@ class HrManager {
 
 
 	private List<Employee> employeeList = new ArrayList<>();
+	private static final Path PATH = Paths.get("G:\\SDA\\sdacademy-examples\\hr-module\\src\\employees.txt");
 
 	Employee create(String firstName, String lastName, String dateOfBirth) {
 		Employee newEmployee = new Employee(firstName,lastName,dateOfBirth);
+		try {
+			Files.write(PATH,employeeList.stream().map(Employee::toString).collect(Collectors.toList()));
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
 		employeeList.add(newEmployee);
 		return newEmployee;
 	}
 
 	public List<Employee> findAll() {
+		try {
+			Files.readAllLines(PATH).stream().map((line) -> {
+				String[] splitLine = line.split(" ");
+				Employee employee = new Employee(splitLine[0],splitLine[1],splitLine[2]);
+				return employee;
+			}).collect(Collectors.toList());
+		}
+		catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 		return employeeList;
 	}
 

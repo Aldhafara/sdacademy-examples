@@ -3,10 +3,10 @@ package pl.sdacademy.hr;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
 
-public class HrMenagerSwingAdapter {
+public class HrManagerSwingAdapter {
 
 	private HrManager hrManager;
-	HrMenagerSwingAdapter(HrManager hrManager){
+	HrManagerSwingAdapter(HrManager hrManager){
 		this.hrManager = hrManager;
 	}
 
@@ -38,4 +38,17 @@ public class HrMenagerSwingAdapter {
 		tableModel.setRowCount(0);
 		}
 
+	public void sort(DefaultTableModel tableModel) {
+		clearTable(tableModel);
+		List<Employee>sortedEmployees = hrManager.sortByFirstName();
+		for (Employee employee:sortedEmployees) {
+			addRow(tableModel,employee );
+		}
+
+	}
+
+	private void addRow(DefaultTableModel tableModel, Employee newEmployee) {
+		tableModel.addRow(new Object[]{newEmployee.getFirstName(),newEmployee.getLastName(),newEmployee
+			.getDateOfBirth()});
+	}
 }

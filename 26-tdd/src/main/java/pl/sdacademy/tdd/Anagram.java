@@ -20,7 +20,7 @@ public class Anagram {
 		 strLocalValue = "";
 
 			for (int j = ch.length-1; j>= 0; j--) {
-				if (i != j)
+				if (1 != j)
 					strLocalValue+=ch[j];
 			}
 

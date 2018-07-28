@@ -9,7 +9,7 @@ import java.awt.event.FocusListener;
 
 public class SwingView {
 
-	private static final HrMenagerSwingAdapter adapter = new HrMenagerSwingAdapter(new HrManager());
+	private static final HrManagerSwingAdapter adapter = new HrManagerSwingAdapter(new HrManager());
 	private static DefaultTableModel tableModelOne = new DefaultTableModel();
 	private static DefaultTableModel tableModelTwo = new DefaultTableModel();
 
@@ -26,6 +26,7 @@ public class SwingView {
 		tableModelTwo.addColumn("First Name");
 		tableModelTwo.addColumn("Last Name");
 		tableModelTwo.addColumn("Date of birth");
+
 
 
 		SwingUtilities.invokeLater(() -> {
